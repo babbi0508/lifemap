@@ -829,7 +829,7 @@ function normalizeSmartRoadmap(goal, data) {
 }
 
 async function buildRoadmap(goal) {
-  const response = await fetch("http://127.0.0.1:5000/api/generate-roadmap", {
+  const response = await fetch("https://lifemap-8a58.onrender.com/api/generate-roadmap", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ goal }),
@@ -1192,7 +1192,7 @@ function createCertificateId(goal) {
 }
 
 const authRequest = async (endpoint, options = {}) => {
-  const response = await fetch(`http://127.0.0.1:5000${endpoint}`, {
+  const response = await fetch(`https://lifemap-8a58.onrender.com${endpoint}`, {
     ...options,
     credentials: "include",
     headers: {
@@ -1756,7 +1756,7 @@ function App() {
 
     if (!cachedVideo) {
       try {
-        const videoResponse = await fetch("http://127.0.0.1:5000/api/find-video", {
+        const videoResponse = await fetch("https://lifemap-8a58.onrender.com/api/find-video", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -1809,7 +1809,7 @@ function App() {
     }
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/api/generate-quiz", {
+      const response = await fetch("https://lifemap-8a58.onrender.com/api/generate-quiz", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -1963,7 +1963,7 @@ function App() {
         })),
       };
 
-      const response = await fetch("http://127.0.0.1:5000/api/generate-final-assessment", {
+      const response = await fetch("https://lifemap-8a58.onrender.com/api/generate-final-assessment", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ goal, roadmap: compactRoadmap }),
@@ -2052,7 +2052,7 @@ function App() {
         })),
       };
 
-      const response = await fetch("http://127.0.0.1:5000/api/generate-final-project", {
+      const response = await fetch("https://lifemap-8a58.onrender.com/api/generate-final-project", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ goal, roadmap: compactRoadmap }),
